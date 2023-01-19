@@ -14,6 +14,8 @@ class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSou
     
     var nameArray = [String]()
     var idArray = [UUID]()
+    var selectedSerie = ""
+    var selectedSerieId : UUID?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,11 @@ class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSou
     }
     
     @objc func addButton() {
-        
+        selectedSerie = ""
         performSegue(withIdentifier: "toDetailsVC", sender: nil)
-        
     }
+    
+   
     
     override func viewWillAppear(_ animated: Bool) {
         
@@ -81,6 +84,22 @@ class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSou
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailsVC" {
+            
+            let destinationVC = segue.destination as! DetailsViewController
+                destinationVC.chosenSeries = selectedSerie
+                destinationVC.chosenSeriesId = selectedSerieId
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedSerie = nameArray[indexPath.row]
+        selectedSerieId = idArray[indexPath.row]
+        performSegue(withIdentifier: "toDetailsVC", sender: nil)
+    }
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
@@ -108,12 +127,10 @@ class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSou
                                     try context.save()
                                 } catch {
                                     print("Error")
-                                }
+                                }; break
                             }
                         }
-                        
                     }
-                    
                 }
             } catch {
                 print("Error")

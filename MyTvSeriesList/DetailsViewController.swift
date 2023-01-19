@@ -16,7 +16,6 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var saveClicked: UIButton!
     
-    
     var chosenSeries = ""
     var chosenSeriesId : UUID?
     
@@ -65,12 +64,10 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
             } catch {
                 print("Error")
             }
-        } else {
-            
-            saveClicked.isHidden = false
+            saveClicked.isHidden = true
             saveClicked.isEnabled = false
-            
         }
+        
     }
     
     @objc func selectImage() {

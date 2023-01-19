@@ -9,7 +9,7 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var nameArray = [String]()
@@ -35,7 +35,7 @@ class ViewController: UIViewController ,UITableViewDelegate , UITableViewDataSou
     
     override func viewWillAppear(_ animated: Bool) {
         
-        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name("newData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(getData), name: NSNotification.Name(rawValue: "newData"), object: nil)
     }
     
     @objc func getData() {

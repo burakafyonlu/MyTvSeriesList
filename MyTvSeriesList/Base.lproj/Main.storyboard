@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-yO-pTA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="w1u-Si-5OT">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
@@ -24,16 +24,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tLW-yO-pTA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CVf-vL-ZcN"/>
-                            <constraint firstItem="tLW-yO-pTA" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="FZ2-gK-usv"/>
-                            <constraint firstItem="tLW-yO-pTA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jbe-sm-y7t"/>
-                            <constraint firstItem="tLW-yO-pTA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YST-b3-bV6"/>
+                            <constraint firstItem="w1u-Si-5OT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P6L-wD-MQu"/>
+                            <constraint firstItem="w1u-Si-5OT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZEg-xT-EBu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w1u-Si-5OT" secondAttribute="bottom" id="fpo-u7-hMf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w1u-Si-5OT" secondAttribute="trailing" id="rIc-Ej-t7j"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RbG-JH-ely"/>
                     <connections>
-                        <outlet property="tableView" destination="tLW-yO-pTA" id="wcv-SZ-yZy"/>
-                        <segue destination="Yc4-TQ-UGY" kind="show" identifier="toDetailsVC" id="231-Jg-wtT"/>
+                        <outlet property="tableView" destination="w1u-Si-5OT" id="RIw-dN-nak"/>
+                        <segue destination="Yc4-TQ-UGY" kind="show" identifier="toDetailsVC" id="jk0-PR-Kgr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -21,12 +21,12 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let keyboard = UITapGestureRecognizer(target: self , action: #selector(hideKeyboard))
-        view.addGestureRecognizer(keyboard)
+        
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(gestureRecognizer)
         
         imageView.isUserInteractionEnabled = true
-        let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        let imageTapRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(selectImage))
         view.addGestureRecognizer(imageTapRecognizer)
         
         if chosenSeries != "" {
@@ -49,14 +49,15 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
                             nameText.text = name
                         }
                         if let season = result.value(forKey: "season") as? Int {
-                            seasonText.text = String(season)
+                            seasonText.text = "\(season) Season"
                         }
                         if let imdb = result.value(forKey: "imdb") as? Double {
-                            imdbText.text = String(imdb)
+                            imdbText.text = "IMDB :  \(imdb)"
                         }
                         if let imageData = result.value(forKey: "image") as? Data {
                             let image = UIImage(data: imageData)
                             imageView.image = image
+                            
                         }
                     }
                 }
@@ -66,7 +67,15 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
             }
             saveClicked.isHidden = true
             saveClicked.isEnabled = false
+            nameText.isEnabled = false
+            seasonText.isEnabled = false
+            imdbText.isEnabled = false
         }
+    }
+    
+    @objc func hideKeyboard() {
+        
+        view.endEditing(true)
         
     }
     
@@ -80,12 +89,6 @@ class DetailsViewController: UIViewController , UIImagePickerControllerDelegate 
         
     }
     
-    @objc func hideKeyboard() {
-        
-        view.endEditing(true)
-    }
-    
-
     @IBAction func saveClicked(_ sender: Any) {
     
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

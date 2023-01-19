@@ -14,6 +14,7 @@
 		6F00FA802979A4F700466CED /* MyTvSeriesList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6F00FA7E2979A4F700466CED /* MyTvSeriesList.xcdatamodeld */; };
 		6F00FA822979A4F800466CED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F00FA812979A4F800466CED /* Assets.xcassets */; };
 		6F00FA852979A4F800466CED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F00FA832979A4F800466CED /* LaunchScreen.storyboard */; };
+		6F89A9212979B53D001A5387 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F89A9202979B53D001A5387 /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6F00FA812979A4F800466CED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F00FA842979A4F800466CED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F00FA862979A4F800466CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F89A9202979B53D001A5387 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				6F00FA772979A4F700466CED /* SceneDelegate.swift */,
 				6F00FA792979A4F700466CED /* ViewController.swift */,
 				6F00FA7B2979A4F700466CED /* Main.storyboard */,
+				6F89A9202979B53D001A5387 /* DetailsViewController.swift */,
 				6F00FA812979A4F800466CED /* Assets.xcassets */,
 				6F00FA832979A4F800466CED /* LaunchScreen.storyboard */,
 				6F00FA862979A4F800466CED /* Info.plist */,
@@ -145,6 +148,7 @@
 				6F00FA762979A4F700466CED /* AppDelegate.swift in Sources */,
 				6F00FA802979A4F700466CED /* MyTvSeriesList.xcdatamodeld in Sources */,
 				6F00FA782979A4F700466CED /* SceneDelegate.swift in Sources */,
+				6F89A9212979B53D001A5387 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
